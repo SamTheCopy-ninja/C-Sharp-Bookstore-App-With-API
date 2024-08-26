@@ -8,7 +8,7 @@ RS Bookstore is a web application that allows users to explore and manage an onl
 Users can view and purchase books, as well as manage their shopping carts.  
 
 The app also allows Administrators to add, edit, and view inventory details.  
-## This client app works alongside an API. Please download the API using this link: [Bookstore API](https://github.com/PROG7311-VCDN-2024/bookstore-api-ST10082747.git)  
+## This client app works alongside an API. Please download the API using this link: [Bookstore API](https://github.com/SamTheCopy-ninja/C-Sharp-Bookstore-API.git)  
 ### Please ensure the API is running, on your device, whenever you run this client app
 
 ## Features
