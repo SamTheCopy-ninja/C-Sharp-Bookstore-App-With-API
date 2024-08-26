@@ -24,7 +24,7 @@ To install the RS Bookstore client, download the .zip file or clone the reposito
 
 ```bash
 # Clone the repository
-git clone https://github.com/PROG7311-VCDN-2024/bookstore-client-ST10082747.git
+git clone https://github.com/SamTheCopy-ninja/C-Sharp-Bookstore-App-With-API.git
 ```  
 
 ## Configuration  
