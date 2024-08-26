@@ -1,0 +1,68 @@
+﻿@model BookstoreClient.Models.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+    .col-md-4 {
+        border: 2px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    h4 {
+        text-align: center;
+        color: #007bff; 
+    }
+
+</style>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-4">
+            <h4><i class="fas fa-sign-in-alt"></i> Login</h4>
+            <form asp-action="Login">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"><i class="fas fa-envelope"></i> Email:</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"><i class="fas fa-lock"></i> Password:</label>
+                    <input asp-for="Password" class="form-control" type="password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-3">
+            <p>Don't have an account? Click here to Register: <a asp-action="Register"><i class="fas fa-user-plus"></i> Register</a></p>
+            <h3>TO ACCESS ADMIN TOOLS:</h3>
+            <p>If you are registered as an Admin, please login using your admin email address (eg: admin@gmail.com)</p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js (Optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAq5kZxEK2k9qA/voLfm/cF5xJ48b5w9S" crossorigin="anonymous"></script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

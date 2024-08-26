@@ -1,0 +1,60 @@
+﻿@model BookstoreClient.Models.BookInputModel
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<div class="container mt-5">
+    <a asp-controller="Auth" asp-action="Register" class="btn btn-success"><i class="fas fa-user-plus"></i> Add Another Admin</a>
+    <div class="row">
+        <div class="col-md-6">
+            <h2><i class="fas fa-cogs"></i> Admin Dashboard</h2>
+            <a asp-controller="EditBooks" asp-action="AllBooks" class="btn btn-primary"><i class="fas fa-book"></i> Edit Existing Book Details</a>
+
+            <a asp-controller="ViewOrders" asp-action="Index" class="btn btn-secondary"><i class="fas fa-shopping-cart"></i> View Customer Orders</a>
+
+
+            <p>Add a new book to the Inventory, for customers to purchase</p>
+
+            <form asp-controller="Admin" asp-action="AddBook" method="post" class="text-center">
+                <div class="form-group">
+                    <label asp-for="Title"><i class="fas fa-heading"></i> Title:</label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Author"><i class="fas fa-user"></i> Author:</label>
+                    <input asp-for="Author" class="form-control" />
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Price"><i class="fas fa-dollar-sign"></i> Price:</label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Quantity"><i class="fas fa-sort-numeric-up"></i> Quantity:</label>
+                    <input asp-for="Quantity" class="form-control" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Add Book</button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js (Optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAq5kZxEK2k9qA/voLfm/cF5xJ48b5w9S" crossorigin="anonymous"></script>
+

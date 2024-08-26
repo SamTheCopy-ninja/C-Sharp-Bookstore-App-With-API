@@ -1,0 +1,47 @@
+﻿@model List<Carts>
+
+@{
+    ViewData["Title"] = "All Cart Items";
+}
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+
+<!-- Font Awesome CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<h2><i class="fas fa-shopping-cart"></i> Pending Customer Orders</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th><i class="fas fa-book"></i> Book Title</th>
+            <th><i class="fas fa-user"></i> Author</th>
+            <th><i class="fas fa-dollar-sign"></i> Price</th>
+            <th><i class="fas fa-sort-numeric-up"></i> Quantity</th>
+            <th><i class="fas fa-id-card"></i> Customer ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cartItem in Model)
+        {
+            <tr>
+                <td>@cartItem.Book.Title</td>
+                <td>@cartItem.Book.Author</td>
+                <td>@cartItem.Book.Price</td>
+                <td>@cartItem.Quantity</td>
+                <td>@cartItem.UserId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Admin" asp-action="AdminDashboard" class="btn btn-secondary">Return to Dashboard</a>
+
+<!-- Bootstrap JS and Popper.js (Optional) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyAq5kZxEK2k9qA/voLfm/cF5xJ48b5w9S" crossorigin="anonymous"></script>
+
